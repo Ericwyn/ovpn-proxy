@@ -11,7 +11,7 @@
 ## 使用
 ```
 # cd 到项目文件夹
-sudo docker build -t ubuntu-ovpn:latest .
+sudo docker build -t ovpn-proxy:latest .
 ```
 
 然后启动容器
