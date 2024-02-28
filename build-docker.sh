@@ -1,1 +1,1 @@
-docker build -t ovpn-proxy:latest .
+docker build -t ericwyn/ovpn-proxy:latest .
