@@ -7,9 +7,8 @@ if [ $? -eq 0 ]; then
     echo "OpenVPN is running, stopping it..."
     # 停止所有 openvpn 进程
     killall openvpn
+    sleep 2
 fi
-
-sleep 2
 
 echo "-----------------------------------------------"
 echo "OpenVPN is not running, starting it..."

@@ -5,23 +5,27 @@ if [ -n "$SSH_ROOT_PW" ]; then
     echo "Setting root password..."
     echo "root:$SSH_ROOT_PW" | chpasswd
     echo "Setting root password success"
-    echo ""
+    echo "."
+    echo "."
+    echo "."
 fi
 
 # 启动 SSH 服务
+echo "==== Try Start SSH Service ===="
 service ssh start
-echo "start ssh service"
-echo ""
+echo "."
+echo "."
+echo "."
 
+echo "==== Try Start Squid Proxy ===="
 # 启动 squid
 squid
-echo "start squid service"
+squid
+squid
+echo "."
+echo "."
+echo "."
 
+echo "===== Try Start OpenVPN ====="
 # 启动 OpenVPN
 ./runOvpn.sh
-
-# 每5分钟执行一次 runOvpn.sh
-while true; do
-    sleep 300 # 等待300秒，即5分钟
-    ./runOvpn.sh
-done
