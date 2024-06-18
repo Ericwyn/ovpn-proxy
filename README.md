@@ -27,6 +27,7 @@ docker run --privileged -d \
     - 需要确保 `/myconfig/openvpn` 文件夹下存在 `vpn.ovpn` 配置文件
     - 暴露本地 `18080` 端口作为 http 代理端口
     - 环境变量 `SSH_ROOT_PW` 为 root 登录密码
+    - 环境变量 `DNS_HOST` 可自定义 HOST
 
 
 ### 定时重启
@@ -48,3 +49,16 @@ crontab -e
 # cd 到项目文件夹
 sudo docker build -t ericwyn/ovpn-proxy:latest .
 ```
+
+
+## 容器内网络问题排查
+使用以下命令安装一些常用工具
+
+用以排查可能出现的一些异常问题
+```
+apt update
+
+apt install dnsutils iputils-ping net-tools -y
+
+```
+
